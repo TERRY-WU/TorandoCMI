@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Login Feature" duration-ms="37970" started-at="2020-03-05T18:58:26Z" finished-at="2020-03-05T18:59:04Z">
+    <groups>
+    </groups>
+    <test name="Login Test Cases" duration-ms="37970" started-at="2020-03-05T18:58:26Z" finished-at="2020-03-05T18:59:04Z">
+      <class name="com.torando.cases.Login">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="setUp" is-config="true" duration-ms="17" started-at="2020-03-05T18:58:26Z" description="数据初始化" finished-at="2020-03-05T18:58:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="test01()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="test01" duration-ms="5051" started-at="2020-03-05T18:58:26Z" finished-at="2020-03-05T18:58:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test01 -->
+        <test-method status="PASS" signature="test02()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="test02" duration-ms="4148" started-at="2020-03-05T18:58:31Z" finished-at="2020-03-05T18:58:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test02 -->
+        <test-method status="PASS" signature="test03()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="test03" duration-ms="3283" started-at="2020-03-05T18:58:36Z" finished-at="2020-03-05T18:58:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test03 -->
+        <test-method status="PASS" signature="test04()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="test04" duration-ms="4118" started-at="2020-03-05T18:58:39Z" finished-at="2020-03-05T18:58:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test04 -->
+        <test-method status="PASS" signature="test05()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="test05" duration-ms="4072" started-at="2020-03-05T18:58:43Z" finished-at="2020-03-05T18:58:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test05 -->
+        <test-method status="PASS" signature="test06()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="test06" duration-ms="4136" started-at="2020-03-05T18:58:47Z" finished-at="2020-03-05T18:58:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test06 -->
+        <test-method status="PASS" signature="test07()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="test07" duration-ms="4528" started-at="2020-03-05T18:58:51Z" finished-at="2020-03-05T18:58:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test07 -->
+        <test-method status="PASS" signature="test08()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="test08" duration-ms="4457" started-at="2020-03-05T18:58:56Z" finished-at="2020-03-05T18:59:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test08 -->
+        <test-method status="PASS" signature="test09()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="test09" duration-ms="4138" started-at="2020-03-05T18:59:00Z" finished-at="2020-03-05T18:59:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test09 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.torando.cases.Login@5f2050f6]" name="tearDown" is-config="true" duration-ms="0" started-at="2020-03-05T18:59:04Z" finished-at="2020-03-05T18:59:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.torando.cases.Login -->
+    </test> <!-- Login Test Cases -->
+  </suite> <!-- Login Feature -->
+</testng-results>
