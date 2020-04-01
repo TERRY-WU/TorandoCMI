@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Properties;
 
-public class Login {
+public class DataProviderDemo {
 
     public static String expected_result;
     public String methodName;
@@ -41,69 +41,36 @@ public class Login {
     }
 
     @BeforeMethod
-    public void afterMethod(ITestResult testResult){
+    public void afterMethod(ITestResult testResult) {
         methodName = testResult.getMethod().getMethodName();
-        if (testResult.getStatus() == ITestResult.FAILURE){
-            System.out.println("Failed: "+testResult.getMethod().getMethodName());
+        if (testResult.getStatus() == ITestResult.FAILURE) {
+            System.out.println("Failed: " + testResult.getMethod().getMethodName());
         }
-        if (testResult.getStatus()== ITestResult.SUCCESS){
-            System.out.println("Successed: "+testResult.getName());
+        if (testResult.getStatus() == ITestResult.SUCCESS) {
+            System.out.println("Successed: " + testResult.getName());
         }
-    }
-
-    @Test
-    public void test01() throws IOException {
-        run(1);
-    }
-
-    @Test
-    public void test02() throws IOException {
-        run(2);
-    }
-
-    @Test
-    public void test03() throws IOException {
-        run(3);
-    }
-
-    @Test
-    public void test04() throws IOException {
-        run(4);
-    }
-
-    @Test
-    public void test05() throws IOException {
-        run(5);
-    }
-
-    @Test
-    public void test06() throws IOException {
-        run(6);
-    }
-
-    @Test
-    public void test07() throws IOException {
-        run(7);
-    }
-
-    @Test
-    public void test08() throws IOException {
-        run(8);
-    }
-
-    @Test
-    public void test09() throws IOException {
-        run(9);
     }
 
     @AfterTest
-    public void tearDown(){
+    public void tearDown() {
         System.out.println("Test done...");
     }
 
-    public void run(Integer number) throws IOException {
+    @DataProvider(name = "data")
+    public Object[][] provider() {
+        Object[][] provider = new Object[9][2];
+        for (int i = 0; i < provider.length; i++) {
+            provider[i][0] = "login";
+            provider[i][1] = i+1;
+        }
+        return provider;
+    }
+
+    @Test(dataProvider = "data")
+    public void run(String id, Integer number) throws IOException {
+        System.out.println(methodName);
         SqlSession sqlSession = DatabaseUtil.getSqlSession();
-        LoginModel model = sqlSession.selectOne("login", number);
+        LoginModel model = sqlSession.selectOne(id, number);
         expected_result = model.getExpected_result();
         String expected_err_code = getErrCode(expected_result, "ret");
         String res = getResult(model);
@@ -112,7 +79,7 @@ public class Login {
         System.out.println(res);
     }
 
-    public static String getErrCode(String key, String value){
+    public static String getErrCode(String key, String value) {
         JSONObject jsonObject = new JSONObject(key);
         return jsonObject.get(value).toString();
     }

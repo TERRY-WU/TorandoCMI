@@ -40,7 +40,6 @@ public class HttpClientUtil {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         String resultString = "";
         CloseableHttpResponse response = null;
-
         try {
             URIBuilder builder = new URIBuilder(url);
             if (param != null) {

@@ -17,6 +17,11 @@
                     <include name="test09"></include>
                 </methods>
             </class>
+            <class name="com.torando.cases.DataProviderDemo">
+                <methods>
+                    <include name="run"></include>
+                </methods>
+            </class>
         </classes>
     </test>
 
