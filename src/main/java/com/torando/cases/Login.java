@@ -3,6 +3,7 @@ package com.torando.cases;
 import com.torando.config.TestConfig;
 import com.torando.model.LoginModel;
 import com.torando.utils.DatabaseUtil;
+import com.torando.utils.GetErrorCode;
 import com.torando.utils.HandleProsFile;
 import com.torando.utils.HttpClientUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -16,8 +17,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Login {
-
-    private String methodName;
 
     @BeforeTest(groups = "login", description = "Data init")
     public void setUp() {
@@ -34,7 +33,6 @@ public class Login {
 
     @AfterMethod
     public void afterMethod(ITestResult testResult) {
-        methodName = testResult.getMethod().getMethodName();
         if (testResult.getStatus() == ITestResult.FAILURE) {
             System.out.println("Failed: " + testResult.getMethod().getMethodName());
         }
@@ -60,19 +58,13 @@ public class Login {
 
     @Test(dataProvider = "data")
     public void run(String id, Integer number) throws IOException {
-        System.out.println(methodName);
         SqlSession sqlSession = DatabaseUtil.getSqlSession();
         LoginModel model = sqlSession.selectOne(id, number);
         String expected_result = model.getExpected_result();
-        String expected_err_code = getErrCode(expected_result, "ret");
+        String expected_err_code = GetErrorCode.getErrCode(expected_result, "ret");
         String res = getResult(model);
-        String actual_err_code = getErrCode(res, "ret");
+        String actual_err_code = GetErrorCode.getErrCode(res, "ret");
         Assert.assertEquals(actual_err_code, expected_err_code);
-    }
-
-    public static String getErrCode(String key, String value) {
-        JSONObject jsonObject = new JSONObject(key);
-        return jsonObject.get(value).toString();
     }
 
     public static String getResult(LoginModel model) {
