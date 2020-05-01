@@ -1,4 +1,4 @@
-package com.torando.cases;
+package com.torando.test;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

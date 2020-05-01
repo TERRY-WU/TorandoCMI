@@ -5,22 +5,7 @@
     <test name="Login Test Cases">
         <classes>
             <class name="com.torando.cases.Login">
-                <methods>
-                    <include name="test01"></include>
-                    <include name="test02"></include>
-                    <include name="test03"></include>
-                    <include name="test04"></include>
-                    <include name="test05"></include>
-                    <include name="test06"></include>
-                    <include name="test07"></include>
-                    <include name="test08"></include>
-                    <include name="test09"></include>
-                </methods>
-            </class>
-            <class name="com.torando.cases.DataProviderDemo">
-                <methods>
-                    <include name="run"></include>
-                </methods>
+                <methods/>
             </class>
         </classes>
     </test>
