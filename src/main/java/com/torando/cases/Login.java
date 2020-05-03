@@ -7,12 +7,10 @@ import com.torando.utils.GetErrorCode;
 import com.torando.utils.HandleProsFile;
 import com.torando.utils.HttpClientUtil;
 import org.apache.ibatis.session.SqlSession;
-import org.json.JSONObject;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -57,7 +55,7 @@ public class Login {
     }
 
     @Test(dataProvider = "data")
-    public void run(String id, Integer number) throws IOException {
+    public void run(String id, Integer number) {
         SqlSession sqlSession = DatabaseUtil.getSqlSession();
         LoginModel model = sqlSession.selectOne(id, number);
         String expected_result = model.getExpected_result();
