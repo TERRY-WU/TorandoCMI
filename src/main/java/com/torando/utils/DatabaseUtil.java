@@ -10,9 +10,14 @@ import java.io.Reader;
 
 public class DatabaseUtil {
 
-    public static SqlSession getSqlSession() throws IOException {
+    public static SqlSession getSqlSession() {
 
-        Reader reader = Resources.getResourceAsReader("dbconfig.xml");
+        Reader reader = null;
+        try {
+            reader = Resources.getResourceAsReader("dbconfig.xml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(reader);
         //sqlSession执行配置文件中的sql语句。
