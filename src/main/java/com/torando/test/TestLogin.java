@@ -2,7 +2,7 @@ package com.torando.test;
 
 import com.torando.config.TestConfig;
 import com.torando.model.LoginModel;
-import com.torando.utils.DatabaseUtil;
+import com.torando.utils.MyBatisUtils;
 import com.torando.utils.HandleProsFile;
 import com.torando.utils.HttpClientUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -94,7 +94,7 @@ public class TestLogin {
     }
 
     public void run(Integer number) throws IOException {
-        SqlSession sqlSession = DatabaseUtil.getSqlSession();
+        SqlSession sqlSession = MyBatisUtils.getSqlSession();
         LoginModel model = sqlSession.selectOne("login", number);
         expected_result = model.getExpected_result();
         String expected_err_code = getErrCode(expected_result, "ret");

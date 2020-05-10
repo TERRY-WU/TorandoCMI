@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="com.torando.model">
+	<class name="LoginModel" table="login">
+		<id name="id">
+			<generator class="native"></generator>
+		</id>
+		<property name="s" column="s" ></property>
+		<property name="username" column="username" ></property>
+		<property name="password" column="password" ></property>
+		<property name="priority" column="priority" ></property>
+		<property name="is_allow_many" column="is_allow_many" ></property>
+		<property name="client" column="client" ></property>
+		<property name="app_key" column="app_key" ></property>
+		<property name="expected_result" column="expected_result" ></property>
+		<property name="description" column="description" ></property>
+	</class>
+</hibernate-mapping>

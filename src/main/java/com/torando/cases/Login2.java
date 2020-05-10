@@ -1,21 +1,24 @@
 package com.torando.cases;
 
-import com.torando.config.TestConfig;
 import com.torando.model.LoginModel;
-import com.torando.utils.MyBatisUtils;
-import com.torando.utils.GetErrorCode;
-import com.torando.utils.HandleProsFile;
-import com.torando.utils.HttpClientUtil;
-import org.apache.ibatis.session.SqlSession;
-import org.testng.Assert;
-import org.testng.ITestResult;
-import org.testng.annotations.*;
+import com.torando.utils.HibernateUtils;
+import org.hibernate.Session;
+import org.testng.annotations.Test;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+public class Login2 {
 
-public class Login {
+    @Test
+    public void test(){
 
+        Session session = HibernateUtils.getSession();
+        LoginModel model = session.get(LoginModel.class, 5);
+        System.out.println(model);
+        System.out.println("Expected_Result -----> " + model.getExpected_result());
+        session.close();
+        HibernateUtils.closeSessionFactory();
+
+    }
+/*
     @BeforeTest(groups = "login", description = "Data init")
     public void setUp() {
         String fileName = "login.properties";
@@ -56,7 +59,7 @@ public class Login {
 
     @Test(dataProvider = "data")
     public void run(String id, Integer number) {
-        SqlSession sqlSession = MyBatisUtils.getSqlSession();
+        SqlSession sqlSession = DatabaseUtil.getSqlSession();
         LoginModel model = sqlSession.selectOne(id, number);
         String expected_result = model.getExpected_result();
         String expected_err_code = GetErrorCode.getErrCode(expected_result, "ret");
@@ -77,5 +80,6 @@ public class Login {
         map.put(TestConfig.login_app_key, model.getApp_key());
         return HttpClientUtil.doGet(TestConfig.login_url, map);
     }
+ */
 
 }

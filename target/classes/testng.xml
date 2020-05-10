@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">-->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login Feature">
+    <test name="Login Test Cases">
+        <classes>
+            <class name="com.torando.cases.Login">
+                <methods/>
+            </class>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="com.torando.config.ExtentTestNGIReporterListener"/>
+    </listeners>
+</suite>
