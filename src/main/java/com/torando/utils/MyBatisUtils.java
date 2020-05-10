@@ -10,7 +10,18 @@ import java.io.Reader;
 
 public class MyBatisUtils {
 
+<<<<<<< HEAD:src/main/java/com/torando/utils/MyBatisUtils.java
     public static SqlSession getSqlSession()  {
+=======
+    public static SqlSession getSqlSession() {
+
+        Reader reader = null;
+        try {
+            reader = Resources.getResourceAsReader("dbconfig.xml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+>>>>>>> 3a341343ee001a583d88ad77fd2d8cedfc654a70:src/main/java/com/torando/utils/DatabaseUtil.java
 
         Reader reader = null;
         try {
